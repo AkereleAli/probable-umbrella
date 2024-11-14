@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,88 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  background-color: #181c1f;
+  color: #bdd1d4;
+  margin: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+header img {
+  width: 3rem;
+  object-fit: contain;
+}
+header h1 {
+  color: #48d9f3;
+}
+header p {
+  color: #82c2ce;
+}
+#tabs {
+  max-width: 32rem;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+#tabs menu {
+  display: flex;
+  gap: 0.25rem;
+}
+#tabs button {
+  font: inherit;
+  font-size: 0.85rem;
+  background-color: #282f33;
+  border: none;
+  color: #e0eff1;
+  border-bottom-color: #48d9f3;
+  border-radius: 4px 4px 0 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+#tabs button:hover,
+#tabs button.active {
+  background-color: #48d9f3;
+  color: #273133;
+}
+#tab-contents {
+  background-color: #2d3942;
+  border-radius: 0 4px 4px 4px;
+  padding: 1rem;
+}
+#tab-contents li {
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    max-width: 200px;
+    justify-self: center;
+    gap: 1rem;
+  }
+
+  #tabs {
+    max-width: 30rem;
+  }
+  #tabs menu {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0;
   }
 }
