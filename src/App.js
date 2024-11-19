@@ -1,6 +1,8 @@
 import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Header from "./Header";
+import TabButton from "./TabButton";
 
 const content = [
   [
@@ -30,18 +32,16 @@ const content = [
 
 function App() {
   const [activeContentIndex, setActiveContentIndex] = useState(0);
+
+  const handleClick = (index) => {
+    setActiveContentIndex(index);
+  };
   return (
     <div className="App">
-      <header>
-        <img src={logo} alt="" />
-        <div>
-          <h1>React.js</h1>
-          <p>i.e., using the React library for rendering the UI</p>
-        </div>
-      </header>
+      <Header />
       <div id="tabs">
         <menu>
-          <button
+          {/* <button
             className={activeContentIndex === 0 ? "active" : ""}
             onClick={() => setActiveContentIndex(0)}
           >
@@ -64,7 +64,31 @@ function App() {
             onClick={() => setActiveContentIndex(3)}
           >
             React vs JS
-          </button>
+          </button> */}
+          <TabButton
+            isSelected={activeContentIndex === 0}
+            onSelect={() => handleClick(0)}
+          >
+            Why React?
+          </TabButton>
+          <TabButton
+            isSelected={activeContentIndex === 1}
+            onSelect={() => handleClick(1)}
+          >
+            Core Features
+          </TabButton>
+          <TabButton
+            isSelected={activeContentIndex === 2}
+            onSelect={() => handleClick(2)}
+          >
+            Related Resources
+          </TabButton>
+          <TabButton
+            isSelected={activeContentIndex === 3}
+            onSelect={() => handleClick(3)}
+          >
+            React vs JS
+          </TabButton>
         </menu>
         <div id="tab-contents">
           <ul>
